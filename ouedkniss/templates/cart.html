@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+ 
+    <!-- Cart Container -->
+    <div class="container mx-auto mt-10">
+        <div class="flex shadow-md my-10">
+            <!-- Cart Items -->
+            <div class="w-3/4 bg-white px-10 py-10">
+                <div class="flex justify-between border-b pb-8">
+                    <h1 class="font-semibold text-2xl">Shopping Cart</h1>
+                    
+                </div>
+ 
+                <!-- Cart Headers -->
+                <div class="flex mt-10 mb-5">
+                    <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
+                    
+                    
+                  
+                </div>
+
+                {% for order in orders %}
+ 
+                <!-- Cart Item 1 -->
+                <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                    <div class="flex w-2/5"> <!-- product -->
+                        <div class="w-20">
+                            <img class="h-24" src="https://via.placeholder.com/150" alt="Product 1">
+                        </div>
+                        <div class="flex flex-col justify-between ml-4 flex-grow">
+                            <span class="font-bold text-sm">Product Name : <br> {{order.product.title}}</span>
+                            <span class="text-red-500 text-xs"> Price :  {{order.product.price}}</span>
+                            <span class="font-bold text-sm"> status :  {{order.status}}</span>
+                            <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+                        </div>
+                        <a href="/confirmOrder/{{order.id}}/pending/" class="flex font-semibold text-indigo-600 text-sm">
+                            <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M207.029 381.476l-22.91-20.396 68.66-77.75c7.549-8.547 7.549-21.305 0-29.852l-68.66-77.75 22.91-20.396 88.971 100.615c15.099 17.092 15.099 43.338 0 60.43l-88.971 100.615z"></path></svg>
+                            Buy now
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+ 
+                <!-- Add more items as needed -->
+ 
+                <!-- Continue Shopping -->
+                <div class="flex justify-between items-center mt-10">
+                    <a href="/confirmOrder/{{order.id}/pending/}" class="flex font-semibold text-indigo-600 text-sm">
+                        <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M207.029 381.476l-22.91-20.396 68.66-77.75c7.549-8.547 7.549-21.305 0-29.852l-68.66-77.75 22.91-20.396 88.971 100.615c15.099 17.092 15.099 43.338 0 60.43l-88.971 100.615z"></path></svg>
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+ 
+            
+        </div>
+    </div>
+ 
+</body>
+</html>
+ 

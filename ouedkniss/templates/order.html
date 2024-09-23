@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+<body>
+    <!-- order.html -->
+<div class="flex justify-center align-center">
+    {% for order in products %}
+    <div class="flex flex-col justify-center align-center">
+        <div>
+            <h2>{{ product.title }}</h2>
+            <p>Description : {{ product.description }}</p>
+            <p>Prix : {{ product.price }} Da</p>
+            <!-- Add more fields as needed -->
+        </div>
+    </div>
+    {% empty %}
+    <p>Aucun produit trouvé.</p>
+    {% endfor %}
+</div>
+</body>
+</html>

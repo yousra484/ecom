@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+   <!--  <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between">
+                <a href="#" class="flex items-center py-4 px-2">
+                    <span class="font-semibold text-lg">Shop</span>
+                </a>
+                <div class="flex space-x-4 items-center">
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-gray-900">Home</a>
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-gray-900">Catalog</a>
+                    <a href="#" class="py-2 px-3 text-gray-700 hover:text-gray-900">Contact</a>
+                    <a href="#" class="py-2 px-3 bg-indigo-500 text-white rounded">Cart</a>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Catalog Title -->
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-semibold text-gray-800 text-center">Product Catalog</h1>
+    </div>
+
+    <!-- Product Catalog Grid -->
+    
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+        {% for product in products %}
+        <!-- Product Card 1 -->
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <img class="w-full h-48 object-cover rounded-t-lg" src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7D-XhZojv9CDu7wrxqWTOgHaHa%26pid%3DApi&sp=1727088104Tb2965897206fc0502ff25a8725c86d1586349c20780951d122fd96704bb7cf67" alt="Product 1">
+            <div class="mt-4">
+                <h3 class="text-lg font-semibold">{{product.title}}</h3>
+                <p class="text-gray-500">Seller:{{product.owner.user}}</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-indigo-500 font-bold">{{product.price}}$</span>
+                    <a href="/createOrder/{{product.id}}/incart/" class="px-3 py-1 bg-indigo-500 text-white text-sm rounded">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      
+
+        
+        <!-- Add more product cards as needed -->
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+<body>
+    <!-- product.html -->
+<div class="flex justify-center align-center">
+    {% for order in orders %}
+    <div class="flex flex-col justify-center align-center">
+        <div>
+            <h2>product {{order.product}}</h2>
+            <p>seller : {{ order.seller }}</p>
+            <p>Client {{ order.client }}</p>
+            <p>total: {{ order.total }} Da</p>
+            <!-- Add more fields as needed -->
+        </div>
+    </div>
+    {% empty %}
+    <p>Aucun commande trouvé.</p>
+    {% endfor %}
+</div>
+</body>
+</html>
